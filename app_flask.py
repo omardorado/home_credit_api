@@ -17,7 +17,7 @@ COLS_CAT = ['NAME_CONTRACT_TYPE', 'NAME_INCOME_TYPE', 'NAME_EDUCATION_TYPE',
 FEATS = [f for f in df.columns if f not in (
         COLS_CAT+['TARGET','SK_ID_CURR','SK_ID_BUREAU','SK_ID_PREV','index'])]
 
-@app.route("/api")
+@app.route("/")
 def get_infos():
     SK_ID = int(request.args.get('sk_id'))
     client_df = df[df['SK_ID_CURR']==SK_ID]
